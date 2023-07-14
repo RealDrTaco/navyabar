@@ -55,7 +55,7 @@
                   clearInterval(id);
                   i = 0;
                 } else {
-                  timeLeft = (1703462400000 - Date.now());
+                  timeLeft = (earlyTime - Date.now());
                   percent = 1 - (timeLeft/timeStart);
                   //console.log(percent);
                   width = percent * 100;
