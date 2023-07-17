@@ -72,7 +72,7 @@
                   i = 0;
                 } else {
                   timeLeft = (christmasTime - Date.now());
-                  percent = 1 - (timeLeft/(timeStart/2));
+                  percent = 1 - (timeLeft/timeStart);
                   //console.log(percent);
                   width = percent * 100;
                   elem.style.width = width + "%";
@@ -88,9 +88,9 @@
                   i = 0;
                 } else {
                   timeLeft50 = (christmasTime - Date.now());
-                  percent50 = 1 - (timeLeft50/timeStart);
+                  percent50 = 1 - (timeLeft50/(timeStart/2));
                   //console.log(percent);
-                  width50 = percent * 100;
+                  width50 = percent50 * 100;
                   elem50.style.width = width50 + "%";
                   width50 = width50 * 100000;
                   width50 = Math.round(width50);
