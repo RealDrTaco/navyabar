@@ -34,6 +34,7 @@
               text-align: center; /* To center it horizontally (if you want) */
               line-height: 30px; /* To center it vertically */
               color: white;
+              border-style: solid;  
             }        
             #myBar50 {
               width: 10%;
@@ -44,6 +45,7 @@
               text-align: center; /* To center it horizontally (if you want) */
               line-height: 30px; /* To center it vertically */
               color: white;
+              border-style: solid;  
             }
         </style>
         <script>
@@ -51,7 +53,7 @@
           var christmasTime = 1703462400000;
           var earlyTime = 1701993600000;
           var startTime = 1678233600000;
-          var timeStart = earlyTime - 1678233600000;
+          var timeStart = christmasTime - 1678233600000;
           var timeLeft = 0;
           var percent = 0;
 
@@ -69,8 +71,8 @@
                   clearInterval(id);
                   i = 0;
                 } else {
-                  timeLeft = (earlyTime - Date.now());
-                  percent = 1 - (timeLeft/timeStart);
+                  timeLeft = (christmasTime - Date.now());
+                  percent = 1 - (timeLeft/(timeStart/2));
                   //console.log(percent);
                   width = percent * 100;
                   elem.style.width = width + "%";
@@ -85,7 +87,7 @@
                   clearInterval(id50);
                   i = 0;
                 } else {
-                  timeLeft50 = (earlyTime - Date.now());
+                  timeLeft50 = (christmasTime - Date.now());
                   percent50 = 1 - (timeLeft50/timeStart);
                   //console.log(percent);
                   width50 = percent * 100;
