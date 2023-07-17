@@ -68,8 +68,33 @@
               }
             }
           }
+          function move50() {
+            if (i == 0) {
+              i = 1;
+              var elem = document.getElementById("myBar50");
+              var width = 10;
+              var id = setInterval(frame, 10);
+              function frame() {
+                if (width >= 100) {
+                  clearInterval(id);
+                  i = 0;
+                } else {
+                  timeLeft = (earlyTime - Date.now());
+                  percent = 1 - (timeLeft/timeStart);
+                  //console.log(percent);
+                  width = percent * 100;
+                  elem.style.width = width + "%";
+                  width = width * 100000;
+                  width = Math.round(width);
+                  width = width / 100000;
+                  elem.innerHTML = width + "%";
+                }
+              }
+            }
+          } 
           window.onload = function() {
             move();
+            move50();
           };
         </script>
     </head>
@@ -77,6 +102,7 @@
     <body>
         <div id="myProgress">
             <div id="myBar"><p>10%</p></div>
+            <div id="myBar50"><p>10%</p></div>
         </div>
     </body>
 </html>
