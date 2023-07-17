@@ -59,8 +59,11 @@
             if (i == 0) {
               i = 1;
               var elem = document.getElementById("myBar");
+              var elem50 = document.getElementById("myBar50");  
               var width = 10;
+              var width50 = 10;  
               var id = setInterval(frame, 10);
+              var id50 = setInterval(frame50, 10);  
               function frame() {
                 if (width >= 100) {
                   clearInterval(id);
@@ -77,35 +80,26 @@
                   elem.innerHTML = width + "%";
                 }
               }
-            }
-          }
-          function move50() {
-            if (i == 0) {
-              i = 1;
-              var elem = document.getElementById("myBar50");
-              var width = 10;
-              var id = setInterval(frame50, 10);
               function frame50() {
-                if (width >= 100) {
-                  clearInterval(id);
+                if (width50 >= 100) {
+                  clearInterval(id50);
                   i = 0;
                 } else {
-                  timeLeft = (earlyTime - Date.now());
-                  percent = 1 - (timeLeft/timeStart);
+                  timeLeft50 = (earlyTime - Date.now());
+                  percent50 = 1 - (timeLeft50/timeStart);
                   //console.log(percent);
-                  width = percent * 100;
-                  elem.style.width = width + "%";
-                  width = width * 100000;
-                  width = Math.round(width);
-                  width = width / 100000;
-                  elem.innerHTML = width + "%";
+                  width50 = percent * 100;
+                  elem50.style.width = width50 + "%";
+                  width50 = width50 * 100000;
+                  width50 = Math.round(width50);
+                  width50 = width50 / 100000;
+                  elem50.innerHTML = width50 + "%";
                 }
               }
             }
-          } 
+          }
           window.onload = function() {
             move();
-            move50();
           };
         </script>
     </head>
