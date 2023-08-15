@@ -62,9 +62,10 @@
         <script>
           var i = 0;
           var christmasTime = 1703462400000;
-          var earlyTime = 1701993600000;
+          var earlyTime = 1702144800000;
           var startTime = 1678233600000;
           var timeStart = christmasTime - 1678233600000;
+          var timeStartEarly = earlyTime - 1678233600000;
           var timeLeft = 0;
           var percent = 0;
 
@@ -98,10 +99,10 @@
                   clearInterval(id50);
                   i = 0;
                 } else {
-                  timeLeft50 = (christmasTime - Date.now());
-                  percent50 = 1 - (timeLeft/timeStart);
+                  timeLeft50 = (earlyTime - Date.now());
+                  percent50 = 1 - (timeLeft50/timeStartEarly);
                   //console.log(percent);
-                  width50 = percent50 * 200;
+                  width50 = percent50 * 100;
                   elem50.style.width = width50 + "%";
                   width50 = width50 * 100000;
                   width50 = Math.round(width50);
