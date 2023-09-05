@@ -61,10 +61,10 @@
         </style>
         <script>
           var i = 0;
-          var christmasTime = 1703462400000;
+          var arrivalTime = 1702404000000;
           var earlyTime = 1702144800000;
           var startTime = 1678233600000;
-          var timeStart = christmasTime - 1678233600000;
+          var timeStart = arrivalTime - 1678233600000;
           var timeStartEarly = earlyTime - 1678233600000;
           var timeLeft = 0;
           var percent = 0;
@@ -83,7 +83,7 @@
                   clearInterval(id);
                   i = 0;
                 } else {
-                  timeLeft = (christmasTime - Date.now());
+                  timeLeft = (arrivalTime - Date.now());
                   percent = 1 - (timeLeft/timeStart);
                   //console.log(percent);
                   width = percent * 100;
@@ -121,7 +121,7 @@
     <body>
         <div id="myProgress">
             <div id="mydiv"><div id="myBar"><p>10%</p></div></div>
-            <div id="mydiv50"><div id="myBar50"><p>10%</p></div></div>
+            <div id="mydiv50" style="display:none"><div id="myBar50"><p>10%</p></div></div> 
         </div>
     </body>
 </html>
